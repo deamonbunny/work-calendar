@@ -72,6 +72,18 @@ textarea{
   transition: all .3s ease-in-out;
 }
 
+tr {
+  border: 2px solid black;
+}
+
+th {
+  border-right: 2px solid black;
+}
+
 tbody {
   background-color: white;
+}
+
+.form-control {
+  border: none;
 }
