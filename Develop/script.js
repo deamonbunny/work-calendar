@@ -40,7 +40,6 @@ for (var i = 9; i <= 17; i++)
     {
         var slot = document.querySelector("#block" + i.toString());
         $(slot).addClass("past");
-
     }
     else if (timeHours == i)
     {
@@ -51,6 +50,90 @@ for (var i = 9; i <= 17; i++)
     {
         var slot = document.querySelector("#block" + i.toString());
         $(slot).addClass("future");
+    }
+}
+
+renderLogData(true, 9)
+
+function renderLogData(dataLog, num) {
+    if (dataLog) {
+        for(var i = 9; i <= 17; i++) {
+            var task = localStorage.getItem("task"+num.toString());
+            if (!task) {
+                return;
+            } switch(num) {
+                case 9:
+                    text1.textContent = task;
+                    $("#block9").attr("placeholder", task)
+                    break;
+                case 10:
+                    text2.textContent = task;
+                    $("#block10").attr("placeholder", task)
+                    break;
+                case 11:
+                    text3.textContent = task;
+                    $("#block11").attr("placeholder", task)
+                    break;
+                case 12:
+                    text4.textContent = task;
+                    $("#block12").attr("placeholder", task)
+                    break;
+                case 13:
+                    text5.textContent = task;
+                    $("#block13").attr("placeholder", task)
+                    break;
+                case 14:
+                    text6.textContent = task;
+                    $("#block14").attr("placeholder", task)
+                    break;
+                case 15:
+                    text7.textContent = task;
+                    $("#block15").attr("placeholder", task)
+                    break;
+                case 16:
+                    text8.textContent = task;
+                    $("#block16").attr("placeholder", task)
+                    break;
+                case 17:
+                    text9.textContent = task;
+                    $("#block17").attr("placeholder", task)
+                    break;                
+            }
+            num++
+        }
+    } else {
+        var task = localStorage.getItem("task"+num.toString());
+        if (!task) {
+            return;
+        } switch(num) {
+            case 9:
+                text1.textContent = task;
+                break;
+            case 10:
+                text2.textContent = task;
+                break;
+            case 11:
+                text3.textContent = task;
+                break;
+            case 12:
+                text4.textContent = task;
+                break;
+            case 13:
+                text5.textContent = task;
+                break;
+            case 14:
+                text6.textContent = task;
+                break;
+            case 15:
+                text7.textContent = task;
+                break;
+            case 16:
+                text8.textContent = task;
+                break;
+            case 17:
+                text9.textContent = task;
+                break;                
+        }
     }
 }
 
