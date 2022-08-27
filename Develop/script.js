@@ -31,32 +31,33 @@ var timeFrame = setInterval(function(){
 }, 1000 );
 
 var timeNow = moment().format('hh');
-const date = Date();
-var timeHours = date.getTime();
 
 for (var i = 9; i <= 17; i++)
 {
-    if(timeHours > i)
+    if(timeNow > i)
     {
-        var slot = document.querySelector("#block" + i.toString());
+        console.log("Grey");
+        var slot = document.querySelector("#tableBlock" + i.toString());
         $(slot).addClass("past");
     }
-    else if (timeHours == i)
+    else if (timeNow == i)
     {
-        var slot = document.querySelector("#block" + i.toString());
+        console.log("Red");
+        var slot = document.querySelector("#tableBlock" + i.toString());
         $(slot).addClass("present");
     }
-    else if (timeHours < i)
+    else if (timeNow < i)
     {
-        var slot = document.querySelector("#block" + i.toString());
+        console.log("Green");
+        var slot = document.querySelector("#tableBlock" + i.toString());
         $(slot).addClass("future");
     }
 }
 
 renderLogData(true, 9)
 
-function renderLogData(dataLog, num) {
-    if (dataLog) {
+function renderLogData(itLoops, num) {
+    if (itLoops) {
         for(var i = 9; i <= 17; i++) {
             var task = localStorage.getItem("task"+num.toString());
             if (!task) {
@@ -137,3 +138,57 @@ function renderLogData(dataLog, num) {
     }
 }
 
+update1.addEventListener("click", function(event) {
+    event.preventDefault();
+    var taskData = document.querySelector("#block9").value;
+    localStorage.setItem("task9", taskData);
+    renderLogData(false, 9);
+});
+update2.addEventListener("click", function(event) {
+    event.preventDefault();
+    var taskData = document.querySelector("#block10").value;
+    localStorage.setItem("task10", taskData);
+    renderLogData(false, 10);
+});
+update3.addEventListener("click", function(event) {
+    event.preventDefault();
+    var taskData = document.querySelector("#block11").value;
+    localStorage.setItem("task11", taskData);
+    renderLogData(false, 11);
+});
+update4.addEventListener("click", function(event) {
+    event.preventDefault();
+    var taskData = document.querySelector("#block12").value;
+    localStorage.setItem("task12", taskData);
+    renderLogData(false, 12);
+});
+update5.addEventListener("click", function(event) {
+    event.preventDefault();
+    var taskData = document.querySelector("#block13").value;
+    localStorage.setItem("task13", taskData);
+    renderLogData(false, 13);
+});
+update6.addEventListener("click", function(event) {
+    event.preventDefault();
+    var taskData = document.querySelector("#block14").value;
+    localStorage.setItem("task14", taskData);
+    renderLogData(false, 14);
+});
+update7.addEventListener("click", function(event) {
+    event.preventDefault();
+    var taskData = document.querySelector("#block15").value;
+    localStorage.setItem("task15", taskData);
+    renderLogData(false, 15);
+});
+update8.addEventListener("click", function(event) {
+    event.preventDefault();
+    var taskData = document.querySelector("#block16").value;
+    localStorage.setItem("task16", taskData);
+    renderLogData(false, 16);
+});
+update9.addEventListener("click", function(event) {
+    event.preventDefault();
+    var taskData = document.querySelector("#block17").value;
+    localStorage.setItem("task17", taskData);
+    renderLogData(false, 17);
+});
